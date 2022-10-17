@@ -14,8 +14,13 @@ class CreatePortfolioClientsTable extends Migration
     public function up()
     {
         Schema::create('portfolio_clients', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('logo');
+            $table->boolean('is_published');
             $table->timestamps();
+            $table->index('id');
         });
     }
 

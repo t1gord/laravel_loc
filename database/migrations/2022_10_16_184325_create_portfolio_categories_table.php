@@ -14,8 +14,16 @@ class CreatePortfolioCategoriesTable extends Migration
     public function up()
     {
         Schema::create('portfolio_categories', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('preview_img');
+            $table->string('alias')->unique();
+            $table->string('parent_id');
+            $table->boolean('is_published');
             $table->timestamps();
+            $table->softDeletes();
+            $table->index('id');
         });
     }
 

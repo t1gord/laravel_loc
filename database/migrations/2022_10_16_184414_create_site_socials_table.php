@@ -14,8 +14,12 @@ class CreateSiteSocialsTable extends Migration
     public function up()
     {
         Schema::create('site_socials', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('link');
+            $table->boolean('is_published');
             $table->timestamps();
+            $table->index('id');
         });
     }
 

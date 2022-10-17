@@ -14,8 +14,20 @@ class CreatePortfolioPostsTable extends Migration
     public function up()
     {
         Schema::create('portfolio_posts', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('category_id')->unsigned()->index();
+            $table->string('image');
+            $table->text('description');
+            $table->integer('client_id')->unsigned()->index();
+            $table->string('alias');
+            $table->boolean('is_published');
             $table->timestamps();
+            $table->softDeletes();
+            $table->index('id');
+
+            $table->foreign('category_id')->references('id')->on('portfolio_categories');
+            $table->foreign('client_id')->references('id')->on('portfolio_clients');
         });
     }
 
