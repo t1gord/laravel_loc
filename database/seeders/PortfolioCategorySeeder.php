@@ -15,14 +15,23 @@ class PortfolioCategorySeeder extends Seeder
      */
     public function run()
     {
-        $name = Str::random(10);
-        DB::table('portfolio_categories')->insert([
-            'name' => $name,
-            'description' => Str::random(300),
-            'preview_img' => "/images/works/" . rand(1, 9) . ".png",
-            'alias' => Str::slug($name),
-            'parent_id' => '0',
-            'is_published' => true,
-        ]);
+        $categories = [];
+
+        for($i = 1; $i < 10; $i++) {
+            $catName = "Категория $i";
+            $parentId = ($i < 3) ? rand(1, 4) : 1;
+            $alias = Str::slug($catName);
+
+            $categories[] = [
+                'name' => $catName,
+                'description' => Str::random(100),
+                'preview_img' => "/images/category/$i.png",
+                'alias' => $alias,
+                'parent_id' => $parentId,
+                'is_published' => true,
+            ];
+        }
+
+        DB::table('portfolio_categories')->insert($categories);
     }
 }

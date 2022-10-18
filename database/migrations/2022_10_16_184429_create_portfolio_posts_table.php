@@ -22,6 +22,7 @@ class CreatePortfolioPostsTable extends Migration
             $table->integer('client_id')->unsigned()->index();
             $table->string('alias');
             $table->boolean('is_published');
+            $table->dateTime('published_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->index('id');
