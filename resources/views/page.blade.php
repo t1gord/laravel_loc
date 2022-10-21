@@ -271,7 +271,7 @@
                     <div>
                         {{-- {{ dd($categories) }} --}}
                         @foreach ($categories as $category)
-                            <p class="fs-lg mb-0"><a href="/portfolio/{{ $category->alias }}">{{$category->id}}. {{ $category->name }}</a></p>
+                            <p class="fs-lg mb-0">{{$category->id}}. <a href="/portfolio/category/{{ $category->alias }}">{{ $category->name }}</a></p>
                         @endforeach
                     </div>
                 </div>

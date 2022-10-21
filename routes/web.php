@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PortfolioCategoryController;
 
 
 /*
@@ -20,14 +21,18 @@ Route::get('/', function () {
 
 Route::get('/test-portfolio', function () {
     return view('test');
-})->name('portfolio');
+});
 
 Route::get('/test-art', function () {
     return view('test-art');
-})->name('test-art');
+});
 
-Route::get('/test-page', 'App\Http\Controllers\PortfolioCategoryController@index');
+Route::resource('portfolio', PortfolioCategoryController::class);
+
+Route::get('/portfolio/category/{alias}', function () {
+    return view('test-art');
+});
 
 Route::get('/test', function () {
     return Route::currentRouteName();
-})->name('test');
+});
