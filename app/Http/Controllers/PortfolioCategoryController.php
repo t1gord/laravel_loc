@@ -10,12 +10,13 @@ class PortfolioCategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
         $categories = DB::table('portfolio_categories')->get();
-            return view('page', ['categories' => $categories]);
+
+        return view('page', compact('categories'));
     }
 
     /**
