@@ -14,10 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->call(PortfolioCategorySeeder::class);
-        $this->call(PortfolioClientSeeder::class);
-        $this->call(SiteSettingsSeeder::class);
-        $this->call(SiteSocialSeeder::class);
-        \App\Models\PortfolioPost::factory(30)->create();
+//        $this->call(CategorySeeder::class);
+        \App\Models\Category::factory(10)->create();
+        \App\Models\Art::factory(13)->create();
     }
 }
