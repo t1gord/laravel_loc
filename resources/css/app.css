@@ -1,0 +1,8 @@
+.card-portfolio-meta span.text-muted span::after {
+    margin: 0 0.7rem;
+    content: '/';
+}
+.card-portfolio-meta span.text-muted span:last-child::after {
+    margin: 0;
+    content: none;
+}

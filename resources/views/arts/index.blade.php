@@ -7,7 +7,11 @@
             <a href="portfolio-single-project.html" class="stretched-link">{{ $art->name }}</a>
         </h2>
         <div class="card-portfolio-meta">
-            <span class="text-muted">{{ $art->category->name }}</span>
+            <span class="text-muted">
+                @foreach($art->categories as $category)
+                    <span>{{ $category->name }}</span>
+                @endforeach
+            </span>
         </div>
     </div>
 </div>

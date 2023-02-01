@@ -119,6 +119,9 @@
         }
     </style>
 
+    <!-- Mix Laravel CSS -->
+    <link rel="stylesheet" media="screen" href="css/app.css">
+
     <!-- Theme mode -->
     <script>
         let mode = window.localStorage.getItem('mode'),

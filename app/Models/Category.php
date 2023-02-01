@@ -3,17 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use \Illuminate\Database\Eloquent\Relations\HasMany;
+use \Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Category extends Model
 {
     use HasFactory;
 
     /**
-     * @return HasMany
+     * @return BelongsToMany
      */
-    public function arts(): HasMany
+    public function arts(): BelongsToMany
     {
-        return $this->hasMany(Art::class);
+        return $this->BelongsToMany(Art::class);
     }
 }
