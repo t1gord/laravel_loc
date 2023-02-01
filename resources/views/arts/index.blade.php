@@ -7,7 +7,7 @@
             <a href="portfolio-single-project.html" class="stretched-link">{{ $art->name }}</a>
         </h2>
         <div class="card-portfolio-meta">
-            <span class="text-muted">{{ $art->category_id }}</span>
+            <span class="text-muted">{{ $art->category->name }}</span>
         </div>
     </div>
 </div>
